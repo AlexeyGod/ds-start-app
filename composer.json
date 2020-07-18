@@ -1,6 +1,8 @@
 {
     "name": "alexeygod/ds-start-app",
     "description": "Template application",
+    "stability":"stable",
+    "minimum-stability":"dev",
     "authors": [
         {
             "name": "AlexeyGod",
