@@ -1,0 +1,11 @@
+{
+    "name": "alexeygod/ds-start-app",
+    "description": "Template application",
+    "authors": [
+        {
+            "name": "AlexeyGod",
+            "email": "forlem@gmail.com"
+        }
+    ],
+    "require": {}
+}
