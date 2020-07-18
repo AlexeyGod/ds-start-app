@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "require": {
         "php":">=5.3.0",
         "AlexeyGod/ds-start-app":"dev-master"
@@ -10,3 +11,17 @@
         }
     ]
 }
+=======
+    "name": "alexeygod/ds-start-app",
+    "description": "Template application",
+    "stability":"stable",
+    "minimum-stability":"dev",
+    "authors": [
+        {
+            "name": "AlexeyGod",
+            "email": "forlem@gmail.com"
+        }
+    ],
+    "require": {}
+}
+>>>>>>> 9f8ebe765d66b77af1e3db4d59f102602fcb80ed
