@@ -9,6 +9,11 @@
             "email": "forlem@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "\\": ""
+        }
+    },
     "require": {
         "php": ">=5.6.0",
         "alexeygod/ds-framework": "~0.1.0"
