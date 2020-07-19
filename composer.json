@@ -1,12 +1,21 @@
 {
     "name": "alexeygod/ds-start-app",
-    "description": "Example application",
+    "description": "Example DS-Framework application",
     "minimum-stability":"dev",
+    "license": "BSD-3-Clause",
     "authors": [
         {
-            "name": "AlexeyGod",
+            "name": "Alexey G.",
             "email": "forlem@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "php": ">=5.6.0",
+        "alexeygod/ds-framework": "~0.1.0",
+    },
+    "require-dev": {
+        "alexeygod/ds-modules-user": "~0.1.0",
+        "alexeygod/ds-modules-content": "~0.1.0",
+        "alexeygod/ds-modules-manager": "~0.1.0"
+    }
 }
