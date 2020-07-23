@@ -44,8 +44,8 @@ return [
             'assetManager' => [
                 'class' => 'framework\\components\\AssetManager',
                 'options' => [
-                    //'autoReload' => false,
-                    'autoReload' => true, // Принудительная очистка кэша ресурсов
+                    'autoReload' => false,
+                    //'autoReload' => true, // Принудительная очистка кэша ресурсов
                 ]
             ],
         ]
