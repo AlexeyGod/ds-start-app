@@ -17,11 +17,17 @@
     },
     "require": {
         "php": ">=5.6.0",
-        "alexeygod/ds-framework": "~0.1.0"
+        "alexeygod/ds-framework": "~0.1.0",
+        "alexeygod/ds-composer": "~0.1.0"
     },
     "require-dev": {
         "alexeygod/ds-modules-user": "~0.1.0",
         "alexeygod/ds-modules-content": "~0.1.0",
         "alexeygod/ds-modules-manager": "~0.1.0"
+    },
+    "scripts" : {
+        "post-create-project-cmd": [
+            "framework\\composer\\Installer::postInstallProject"
+        ]
     }
 }

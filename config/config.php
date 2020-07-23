@@ -13,12 +13,7 @@ return [
         'modules\\' => '../ds-modules/', // Правило для автозагрузки модулей (если они не в одной папке с сайтом)
     ],
     'aliases' => [
-        '@root' => getenv("DOCUMENT_ROOT"), // ROOT путь
-        '@framework' => getenv("DOCUMENT_ROOT").'/../framework', //Алиас для пути к фреймворку
-        '@modules' => getenv("DOCUMENT_ROOT").'/../ds-modules', //Алиас для пути к модулям
-        '@web' => '/', // WEB адрес
         '@uploadPath' => '/uploads', // Указывается относительно ROOT
-
     ],
     'components' =>
         [
