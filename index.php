@@ -1,12 +1,8 @@
 <?php
 
-/* Настройки */
-$config = require(dirname(__FILE__).'/config/config.php');
-
-/* Автозагрузка классов */
 include 'vendor/autoload.php';
+$config = require(__DIR__.'/config/config.php');
 
-/* Старт приложения */
 $app = new framework\core\Application($config);
 
 $app->run();
