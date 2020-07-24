@@ -8,10 +8,6 @@
 
 return [
     'debug' => true,
-    'autoLoader' => [
-        'framework\\' => '../framework/', // Правило для автозагрузки фреймворка (если он не в одной папке с сайтом)
-        'modules\\' => '../ds-modules/', // Правило для автозагрузки модулей (если они не в одной папке с сайтом)
-    ],
     'aliases' => [
         '@uploadPath' => '/uploads', // Указывается относительно ROOT
     ],
@@ -22,7 +18,7 @@ return [
                 'class' => 'framework\\components\\db\\DataBase',
                 'options' => [
                     'host' => 'localhost',
-                    'database' => 'pure', // Название базы
+                    'database' => '', // Название базы
                     'username' => 'root', // Имя пользователя
                     'password' => '', // Пароль
                     'defaultCharset' => 'utf-8',
