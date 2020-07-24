@@ -27,7 +27,6 @@
     },
     "scripts" : {
         "post-create-project-cmd": [
-            "mkdir assets"
             "framework\\composer\\Installer::postInstallProject"
         ]
     }
