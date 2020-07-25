@@ -13,6 +13,7 @@ return [
     ],
     'components' =>
         [
+            /* For project used DB
 
             'db' => [
                 'class' => 'framework\\components\\db\\DataBase',
@@ -24,7 +25,7 @@ return [
                     'defaultCharset' => 'utf-8',
                 ],
             ],
-
+            
             'identy' => [
                 'class' => 'modules\\user\\models\\User', // Админимстратор по умолчанию: admin 123456
                 'options' => [
@@ -32,6 +33,7 @@ return [
                     'enableTokenAuth' => true, // Автологин по токену
                 ]
             ],
+            */
             'assetManager' => [
                 'class' => 'framework\\components\\AssetManager',
                 'options' => [

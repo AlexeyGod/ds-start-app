@@ -29,10 +29,7 @@ header("Content-type: text/html; charset=utf-8");
              <?//=Menu::widget()?>
              <?=(Application::app()->identy->can('manager') ?
                  '<div class="menu-element"><a href="/manager"><B>Управление</B></a></div>' : '')?>
-             <div class="user-bar">
-                 <img class="userPhoto" src="<?=Application::app()->identy->photo?>" alt="user"> <?php
-                echo (Application::app()->identy->isAuth() ? '<a href="/user/profile">'.Application::app()->identy->name.'</a> [<a href="/user/logout">Выход</a>]' : '<a href="/user/login">Войти</a>');
-             ?></div>
+             
          </div>
     </header>
         <?=FlashWidget::asBlocks()?>

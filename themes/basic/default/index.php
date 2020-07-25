@@ -4,15 +4,15 @@
  * https://digital-solution.ru
  * support@digital-solution.ru
  */
-$this->title = $page->name;
+$this->title = 'Wellcome :)';
 ?>
 <section>
     <div class="page">
         <div class="page-header">
-            <h1><?=$page->name?></h1>
+            <h1>Some Header</h1>
         </div>
        <div class="page-body">
-           <?=$page->content?>
+           Some Content
        </div>
     </div>
 </section>

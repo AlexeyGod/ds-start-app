@@ -18,9 +18,9 @@ class DefaultController extends Controller
 {
     public function actionIndex()
     {
-        $page = Page::findByAlias('main');
-       return $this->render('index', [
-        'page' => $page
+        $data = [];
+        return $this->render('index', [
+        'data' => $data
        ]);
     }
 
