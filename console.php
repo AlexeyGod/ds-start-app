@@ -1,23 +1,41 @@
 <?php
 
 /* Автозагрузка классов */
-include 'autoload.php';
-Autoloader::register();
+include __DIR__.'/vendor/autoload.php';
+$config = require(__DIR__.'/config/console.php');
 
-echo "\033[32mDigital Solution Framework Console Manager\033[37m";
-exec("color 2");
-
-echo "i am ready\n
-- - - -\n
-";
-exec("cout<<<123");
+use framework\helpers\Console;
 
 
-/*
+$console = new Console();
 
-echo 'What is your name?' . PHP_EOL;
-$name = fgets(STDIN);
-echo 'Hello, ' . trim($name) . '!' . PHP_EOL;
+$console->hr()
+    ->setColor('green')
+    ->writeLn("Digital Solution Framework Console Manager")
+    ->setColor()
+    ->hr();
 
- */
+$console->showAllColors();
+
+while (true) {
+    $command = $console->question("Please enter command (You may use 'help' for more info)");
+
+    switch ($command):
+
+        case 'h':
+            $console->setColor('ligth_green')
+                ->writeLn("install")
+                ->setColor('cyan')
+                ->writeLn(' - install mysql structure');
+            break;
+
+        default:
+            $console->setColor('red')->writeln("Unknown command: ".$command);
+            $console->setColor('dark_gray')->writeLn("Use 'help' fro more info.");
+            break;
+
+    endswitch;
+    $console->setColor();
+}
+
 ?>
