@@ -40,4 +40,12 @@ class DefaultController extends Controller
         return $this->render('error');
     }
 
+    public function actionPucb()
+    {
+        $data = [];
+        return $this->render('pus', [
+        'data' => $data
+       ]);
+    }
+
 }

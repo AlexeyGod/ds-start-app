@@ -5,37 +5,54 @@ include __DIR__.'/vendor/autoload.php';
 $config = require(__DIR__.'/config/console.php');
 
 use framework\helpers\Console;
+use framework\core\Application;
 
 
 $console = new Console();
 
 $console->hr()
-    ->setColor('green')
+//    ->setColor('green')
     ->writeLn("Digital Solution Framework Console Manager")
-    ->setColor()
+//    ->setColor()
     ->hr();
 
-$console->showAllColors();
+//$console->showAllColors();
 
 while (true) {
     $command = $console->question("Please enter command (You may use 'help' for more info)");
 
-    switch ($command):
+    switch (trim($command)):
 
-        case 'h':
-            $console->setColor('ligth_green')
-                ->writeLn("install")
-                ->setColor('cyan')
-                ->writeLn(' - install mysql structure');
-            break;
+        case 'help':
+
+            $console
+                ->writeLn("+---------------+------------------------------------------------------------+")
+                ->writeLn("|    COMMAND    |                      DESCRIPTION                           |")
+                ->writeLn("+===============+============================================================+")
+                ->writeLn("| install-db    |   Install mysql structure                                  |")
+                ->writeLn("+---------------+------------------------------------------------------------+")
+                ->writeLn("| exit          |   Close PHP-Handler and return bash-terminal               |") 
+                ->writeLn("+---------------+------------------------------------------------------------+");
+
+        break;
+
+        case 'exit';
+            exit();
+        break;
+
+        case 'install-db':
+            $app = new Application($config);
+            $app->terminal->run($console);
+        break;
 
         default:
-            $console->setColor('red')->writeln("Unknown command: ".$command);
-            $console->setColor('dark_gray')->writeLn("Use 'help' fro more info.");
-            break;
+            $console->writeLn("Unknown command: ".$command);
+            $console->writeLn("Use 'help' fro more info.");
+        break;
 
     endswitch;
-    $console->setColor();
+
+    //break;
 }
 
 ?>

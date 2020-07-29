@@ -8,6 +8,7 @@
 
 return [
     'debug' => true,
+    'app' => 'terminal',
     'components' =>
         [
             //* For project used DB
@@ -20,6 +21,13 @@ return [
                     'username' => 'root', // Имя пользователя
                     'password' => '', // Пароль
                     'defaultCharset' => 'utf-8',
+                ],
+            ],
+
+            'terminal' => [
+                'class' => 'framework\\components\\Terminal',
+                'options' => [
+                    
                 ],
             ],
         ]
