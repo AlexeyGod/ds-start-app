@@ -23,6 +23,8 @@ class BasicBundle extends Bundle
     ];
 
     public $depends = [
-        'framework\\assets\\jquery\\JqueryBundle'
+        'framework\\assets\\jquery\\JqueryBundle',
+        'framework\\assets\\bootstrap\\BootstrapBundle',
+
     ];
 }
