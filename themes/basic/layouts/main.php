@@ -36,17 +36,27 @@ header("Content-type: text/html; charset=utf-8");
                     </div>
                     <div class="col-md-8">
                         <ul>
-                            <li><a href="#">Static element 1</a></li>
-                            <li><a href="#">Static element 2</a></li>
-                            <li><a href="#">Static element 3</a></li>
-                            <li><a href="#">Static element 4</a></li>
-                            <li><a href="#">Static element 5</a></li>
+                            <li><a href="https://github.com/AlexeyGod/ds-start-app">GitHub</a></li>
+                            <li><a href="https://AlexeyGod.github.com//ds-cms">DS-CMS HOMEPAGE</a></li>
+                            <li><a href="https://AlexeyGod.github.com//ds-cms/docs">Documentation</a></li>
+                            <?php
+                            if(Application::app()->identy->can('admin'))
+                            {
+                                echo '<li><b><a href="/manager">Manage</a></b></li>';
+                            }
+                            ?>
                         </ul>
                     </div>
                     <div class="col-md-2 text-right">
                         <div class="im-a-txt">
-                            <img src="<?=$basicBundle?>/img/auth.png" alt="Auth">
-                            <a href="/user/login">Войти</a>
+                            <?php
+                                if(!Application::app()->identy->isAuth())
+                                    echo '<img src="'.$basicBundle.'/img/auth.png" alt="Auth">'
+                                    .'<a href="/login">Войти</a>';
+                            else
+                                echo '<img src="'.\application\models\User::DEFAULT_IMAGE.'" alt="My photo">'
+                                    .'<a href="/logout">'.Application::app()->identy->username.'</a>';
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -55,14 +65,9 @@ header("Content-type: text/html; charset=utf-8");
 
         </nav>
     </header>
-    <section>
-        <?=FlashWidget::asBlocks()?>
-        <article>
-            <div class="container">
-                <?=$content?>
-            </div>
-        </article>
-    </section>
+    <?=FlashWidget::asBlocks()?>
+    <?=$content?>
+
 </div>
 <footer>
     (c) AlexGod

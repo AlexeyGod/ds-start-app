@@ -6,9 +6,8 @@
  */
 ?>
 <section>
-    <h1>404: Не найден</h1>
-    <div class="page">
-
+    <div class="container">
+        <h1>404: Файл не найден или ссылка не верна</h1>
     </div>
 </section>
 

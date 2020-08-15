@@ -7,9 +7,10 @@
 
 namespace application\controllers;
 
+use application\models\User;
 use framework\components\Controller;
 use framework\core\Application;
-use modules\content\models\Page;
+
 
 use framework\exceptions\NotFoundHttpException;
 
@@ -22,6 +23,31 @@ class DefaultController extends Controller
         return $this->render('index', [
         'data' => $data
        ]);
+    }
+
+    public function actionLogin()
+    {
+        if(Application::app()->identy->isAuth())
+        {
+            return $this->redirect('/');
+        }
+
+        $model = new User();
+        if($model->load(Application::$app->request->post()))
+        {
+            if(User::auth($model->username, $model->password))
+                return $this->redirect('/');
+            else
+                Application::app()->request->setFlash('error', 'Не верный логин или пароль');
+        }
+        else
+        {
+            Application::app()->request->setFlash('error', 'Данные не загружены');
+        }
+
+        return $this->render('login', [
+            'model' => $model
+        ]);
     }
 
     public function actionCaptcha()
@@ -38,14 +64,6 @@ class DefaultController extends Controller
     public function actionError()
     {
         return $this->render('error');
-    }
-
-    public function actionPucb()
-    {
-        $data = [];
-        return $this->render('pus', [
-        'data' => $data
-       ]);
     }
 
 }

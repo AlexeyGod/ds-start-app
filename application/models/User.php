@@ -2,9 +2,6 @@
 
 namespace application\models;
 
-use framework\components\user\User as BaseUser;
+use framework\components\user\User as FrameworkUser;
 
-Class User extends BaseUser {
-
-}
-?>
+Class User extends FrameworkUser {}
